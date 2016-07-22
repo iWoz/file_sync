@@ -5,16 +5,20 @@
     <key>Label</key>
     <string>com.wuzhiwei.filesync</string>
     <key>Program</key>
+    <!-- REPLACE BELOW TO YOUR file_sync.py PATH -->
     <string>/Users/Tim/Documents/configs/file_sync/file_sync.py</string>
     <key>RunAtLoad</key>
     <true/>
     <key>KeepAlive</key>
     <true/>
     <key>UserName</key>
+    <!-- REPLACE BELOW TO YOUR USERNAME -->
     <string>Tim</string>
     <key>StandardErrorPath</key>
+    <!-- REPLACE BELOW TO WHAT EVER PATH YOU LIKE -->
     <string>/Users/Tim/Documents/configs/file_sync/file_sync_error.log</string>
     <key>StandardOutPath</key>
+    <!-- REPLACE BELOW TO WHAT EVER PATH YOU LIKE -->
     <string>/Users/Tim/Documents/configs/file_sync/file_sync_output.log</string>
   </dict>
 </plist>
