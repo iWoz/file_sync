@@ -11,13 +11,13 @@ With git, you can know every change with your file by commits.
 
 * Install [watchdog](http://pythonhosted.org/watchdog/)
 
-	in OS X or *nix, use
+	in OS X or *nix:
 	
 	```
 	pip install watchdog
 	```
 	
-	in Windows, use
+	in Windows:
 	
 	```
 	python -m pip install watchdog
@@ -33,7 +33,7 @@ I made a new git repository named sync_configs in [Github](https://github.com/ne
 ###Setup your git repository locally
 
 ```bash
-cd ~/Documents ## REPLACE TO WHATEVER DIR YOU LIKE
+cd ~/Documents ## REPLACE ~/Documents TO WHATEVER DIR YOU LIKE
 
 mkdir configs
 cd configs
@@ -50,6 +50,7 @@ git submodule add git@github.com:iWoz/file_sync.git
 git add -A
 git commit -m "First commit."
 git push -u origin master
+## make sure pushed successfully to start next step
 
 ```
 
@@ -59,11 +60,11 @@ Make a new file name `file_list.txt` in root of your git repository.
 
 For example, contents in my file_list.txt are :
  	
- 	```
- 	/Users/Tim/.zshrc
-	/Users/Tim/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap
-	/Users/Tim/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings
- 	```
+ ```planitext
+/Users/Tim/.zshrc
+/Users/Tim/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap
+/Users/Tim/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings
+ ```
 **Make sure one line one file in its absolute path.**
 
 ###Test
@@ -121,7 +122,7 @@ And when I check the remote git repository, all is worked ok:
 	* check if the service is run in back: `launchctl list | grep com.wuzhiwei.filesync`
 * Windows
 
-	As I use Windows very little, there is an ugly way to do this:
+	I rarely use Windows, there is an ugly way to do this:
 	
 	* make a bat file named `file_sync.bat`
 	* write `python  UPPER_DIR\file_sync.py` in this bat
@@ -129,4 +130,4 @@ And when I check the remote git repository, all is worked ok:
 	* more infomation can be found in [here](http://stackoverflow.com/questions/4438020/how-to-start-a-python-file-while-window-starts)
 * *nix
 
-	I'm pretty sure you can make it happen when you use *nix :)
+	I'm pretty sure you can make it happen by yourself when you use *nix :)
