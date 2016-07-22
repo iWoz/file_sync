@@ -7,6 +7,7 @@ When you modified your files, file will be pushed to a remote git repository.
 With git, you can know every change with your file by commits.
 
 ##Setup
+* Install [git](https://git-scm.com/downloads)
 * Install [Python](https://www.python.org/downloads/)
 
 * Install [watchdog](http://pythonhosted.org/watchdog/)
