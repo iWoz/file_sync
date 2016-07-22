@@ -4,6 +4,7 @@ import sys
 import time
 import ntpath
 import os
+import re
 
 from subprocess import call
 from shutil import copy
@@ -35,7 +36,7 @@ class FileChangeHandler(FileSystemEventHandler):
             copy(event.src_path, DIR_FOR_GIT)
             cd_cmd = "cd "+DIR_FOR_GIT
             git_add_cmd = "git add -A"
-            git_commit_cmd = "git commit -am 'Update " + path_leaf(event.src_path) + "'"
+            git_commit_cmd = "git commit -m Update_" + re.escape(path_leaf(event.src_path))
             git_pull_cmd = "git pull origin master"
             git_push_cmd = "git push origin master"
             call(
