@@ -5,6 +5,7 @@ import time
 import ntpath
 import os
 import re
+import platform
 
 from subprocess import call
 from shutil import copy
@@ -37,6 +38,8 @@ class FileChangeHandler(FileSystemEventHandler):
             cd_cmd = "cd "+DIR_FOR_GIT
             git_add_cmd = "git add -A"
             git_commit_cmd = "git commit -m " + re.escape("Update "+path_leaf(event.src_path))
+            if platform.system() == "Windows":
+                git_commit_cmd = "git commit -m " + re.escape("Update_"+path_leaf(event.src_path))
             git_pull_cmd = "git pull origin master"
             git_push_cmd = "git push origin master"
             call(
