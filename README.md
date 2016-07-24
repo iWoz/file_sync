@@ -29,7 +29,7 @@ With git, you can know every change with your file by commits.
 
 ![new git repository](imgs/new_git.png)
 
-I made a new git repository named sync_configs in [Github](https://github.com/new).
+I made a new git repository named configs in [Github](https://github.com/new).
 	
 ###Setup your git repository locally
 
