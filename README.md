@@ -51,7 +51,7 @@ git submodule add git@github.com:iWoz/file_sync.git
 git add -A
 git commit -m "First commit."
 git push -u origin master
-## make sure you pushed successfully you start the  next step
+## make sure you pushed successfully before you start the  next step
 
 ```
 
