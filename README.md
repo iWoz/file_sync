@@ -2,9 +2,9 @@
 
 Synchronize your files to a git repository automatically.
 
-When you modified your files, file will be pushed to a remote git repository.
+When you have modified your files, files will be pushed to a remote git repository.
 
-With git, you can know every change with your file by commits.
+With git, you can know every change with your files by commits.
 
 ##Setup
 * Install [git](https://git-scm.com/downloads)
@@ -29,7 +29,7 @@ With git, you can know every change with your file by commits.
 
 ![new git repository](imgs/new_git.png)
 
-I made a new git repository named configs in [Github](https://github.com/new).
+I made a new git repository named `configs` in [Github](https://github.com/new).
 	
 ###Setup your git repository locally
 
@@ -51,11 +51,11 @@ git submodule add git@github.com:iWoz/file_sync.git
 git add -A
 git commit -m "First commit."
 git push -u origin master
-## make sure pushed successfully to start next step
+## make sure you pushed successfully before you start the  next step
 
 ```
 
-###Setup your file_list.txt for files to synchronize
+###Setup your **file_list.txt** for files to synchronize
 
 Make a new file name `file_list.txt` in root of your git repository.
 
@@ -76,13 +76,13 @@ cd file_sync
 python file_sync.py
 ```
 
-Now modify one of your files in file_list.txt.
+Now modify one of your files mentioned in file_list.txt.
 
 For example, I modified .zshrc, and then logs are:
 
 ![logs](imgs/logs.png)
 
-And when I check the remote git repository, all is worked ok:
+And when I check the remote git repository, all worked ok:
 
 ![check](imgs/check.png)
 
