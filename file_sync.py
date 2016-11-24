@@ -20,7 +20,7 @@ SYNC_FILE_LIST = []
 f = open(os.path.join(DIR_FOR_GIT, "file_list.txt"), "r")
 try:
     SYNC_FILE_LIST = [line.strip() for line in f]
-except Exception, e:
+except Exception as e:
     raise e
 finally:
     f.close()
