@@ -33,7 +33,6 @@ def path_leaf(path):
 class FileChangeHandler(FileSystemEventHandler):
     def on_modified(self, event):
         if event.src_path in SYNC_FILE_LIST:
-            print event.src_path
             copy(event.src_path, DIR_FOR_GIT)
             cd_cmd = "cd "+DIR_FOR_GIT
             git_add_cmd = "git add -A"
