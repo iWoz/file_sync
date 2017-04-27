@@ -6,7 +6,7 @@ When you have modified your files, files will be pushed to a remote git reposito
 
 With git, you can know every change with your files by commits.
 
-##Setup
+## Setup
 * Install [git](https://git-scm.com/downloads)
 * Install [Python](https://www.python.org/downloads/)
 
@@ -24,14 +24,14 @@ With git, you can know every change with your files by commits.
 	python -m pip install watchdog
 	```
 
-##How to use
-###Make a new git repository for synchronize your files
+## How to use
+### Make a new git repository for synchronize your files
 
 ![new git repository](imgs/new_git.png)
 
 I made a new git repository named `configs` in [Github](https://github.com/new).
 	
-###Setup your git repository locally
+### Setup your git repository locally
 
 ```bash
 cd ~/Documents ## REPLACE ~/Documents TO WHATEVER DIR YOU LIKE
@@ -55,7 +55,7 @@ git push -u origin master
 
 ```
 
-###Setup your **file_list.txt** for files to synchronize
+### Setup your **file_list.txt** for files to synchronize
 
 Make a new file name `file_list.txt` in root of your git repository.
 
@@ -86,7 +86,7 @@ And when I check the remote git repository, all worked ok:
 
 ![check](imgs/check.png)
 
-###Auto run when system startup
+### Auto run when system startup
 * OS X
 	* make a file named `com.wuzhiwei.filesync.plist` in `~/Library/LaunchAgents/`
 	* fill the plist with content below
