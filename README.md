@@ -68,7 +68,7 @@ For example, contents in my file_list.txt are :
  ```
 **Make sure one line one file in its absolute path.**
 
-###Test
+### Test
 Run file_sync.py in submodule file_sync
 
 ```
@@ -91,7 +91,7 @@ And when I check the remote git repository, all worked ok:
 	* make a file named `com.wuzhiwei.filesync.plist` in `~/Library/LaunchAgents/`
 	* fill the plist with content below
 
-		```xml
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC -//Apple Computer//DTD PLIST 1.0//EN http://www.apple.com/DTDs/PropertyList-1.0.dtd >
 <plist version="1.0">
@@ -116,7 +116,7 @@ And when I check the remote git repository, all worked ok:
     <string>/Users/Tim/Documents/configs/file_sync/file_sync_output.log</string>
   </dict>
 </plist>
-		```
+```
 	* replace to your real path or username in lines below `REPLACE BELOW TO ...`
 	* load the plist to system service: `launchctl load ~/Library/LaunchAgents/com.wuzhiwei.filesync.plist`
 	* *if you want to unload the autorun service:* `launchctl unload ~/Library/LaunchAgents/com.wuzhiwei.filesync.plist`
