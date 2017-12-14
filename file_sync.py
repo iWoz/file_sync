@@ -26,11 +26,6 @@ except Exception as e:
 finally:
     f.close()
 
-# get filename without upper directory
-def path_leaf(path):
-    head, tail = ntpath.split(path)
-    return tail or ntpath.basename(head)
-
 class FileChangeHandler(FileSystemEventHandler):
     def on_modified(self, event):
         src_path = event.src_path.replace('\\','/')
@@ -38,9 +33,9 @@ class FileChangeHandler(FileSystemEventHandler):
             copy(src_path, DIR_FOR_GIT)
             os.chdir(DIR_FOR_GIT)
             git_add_cmd = "git add -A"
-            git_commit_cmd = "git commit -m " + re.escape("Update "+path_leaf(src_path))
+            git_commit_cmd = "git commit -m " + re.escape("Update "+os.path.basename(src_path))
             if platform.system() == "Windows":
-                git_commit_cmd = "git commit -m " + re.escape("Update_"+path_leaf(src_path))
+                git_commit_cmd = "git commit -m Update."
             git_pull_cmd = "git pull origin master"
             git_push_cmd = "git push origin master"
             call(
