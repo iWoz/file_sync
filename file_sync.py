@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 import sys
 import time
@@ -19,7 +20,7 @@ DIR_FOR_GIT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SYNC_FILE_LIST = []
 f = open(os.path.join(DIR_FOR_GIT, "file_list.txt"), "r")
 try:
-    SYNC_FILE_LIST = [line.strip() for line in f]
+    SYNC_FILE_LIST = [line.strip().replace('\\','/') for line in f if os.path.isfile(line.strip().replace('\\','/'))]
 except Exception as e:
     raise e
 finally:
@@ -32,17 +33,17 @@ def path_leaf(path):
 
 class FileChangeHandler(FileSystemEventHandler):
     def on_modified(self, event):
-        if event.src_path in SYNC_FILE_LIST:
-            copy(event.src_path, DIR_FOR_GIT)
-            cd_cmd = "cd "+DIR_FOR_GIT
+        src_path = event.src_path.replace('\\','/')
+        if src_path in SYNC_FILE_LIST:
+            copy(src_path, DIR_FOR_GIT)
+            os.chdir(DIR_FOR_GIT)
             git_add_cmd = "git add -A"
-            git_commit_cmd = "git commit -m " + re.escape("Update "+path_leaf(event.src_path))
+            git_commit_cmd = "git commit -m " + re.escape("Update "+path_leaf(src_path))
             if platform.system() == "Windows":
-                git_commit_cmd = "git commit -m " + re.escape("Update_"+path_leaf(event.src_path))
+                git_commit_cmd = "git commit -m " + re.escape("Update_"+path_leaf(src_path))
             git_pull_cmd = "git pull origin master"
             git_push_cmd = "git push origin master"
             call(
-                cd_cmd + "&&" +
                 git_add_cmd + "&&" +
                 git_commit_cmd + "&&" +
                 git_pull_cmd + "&&" +
