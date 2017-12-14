@@ -127,8 +127,9 @@ And when I check the remote git repository, all worked ok:
 	I rarely use Windows, there is an ugly way to do this:
 	
 	* make a bat file named `file_sync.bat`
-	* write `python  UPPER_DIR\file_sync.py` in this bat
+	* write `pythonw  __YOUR_DIR__\file_sync.py` in this bat
 	* put this bat to your startup folder `C:\Documents and Settings\All Users\Start Menu\Programs\Startup`
+	* close the console because we use `pythonw`
 	* more infomation can be found in [here](http://stackoverflow.com/questions/4438020/how-to-start-a-python-file-while-window-starts)
 * *nix
 
