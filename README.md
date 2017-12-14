@@ -91,36 +91,37 @@ And when I check the remote git repository, all worked ok:
 	* make a file named `com.wuzhiwei.filesync.plist` in `~/Library/LaunchAgents/`
 	* fill the plist with content below
 
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC -//Apple Computer//DTD PLIST 1.0//EN http://www.apple.com/DTDs/PropertyList-1.0.dtd >
-<plist version="1.0">
-  <dict>
-    <key>Label</key>
-    <string>com.wuzhiwei.filesync</string>
-    <key>Program</key>
-    <!-- REPLACE BELOW TO YOUR file_sync.py PATH -->
-    <string>/Users/Tim/Documents/configs/file_sync/file_sync.py</string>
-    <key>RunAtLoad</key>
-    <true/>
-    <key>KeepAlive</key>
-    <true/>
-    <key>UserName</key>
-    <!-- REPLACE BELOW TO YOUR USERNAME -->
-    <string>Tim</string>
-    <key>StandardErrorPath</key>
-    <!-- REPLACE BELOW TO WHAT EVER PATH YOU LIKE -->
-    <string>/Users/Tim/Documents/configs/file_sync/file_sync_error.log</string>
-    <key>StandardOutPath</key>
-    <!-- REPLACE BELOW TO WHAT EVER PATH YOU LIKE -->
-    <string>/Users/Tim/Documents/configs/file_sync/file_sync_output.log</string>
-  </dict>
-</plist>
-```
+		```
+		<?xml version="1.0" encoding="UTF-8"?>
+		<!DOCTYPE plist PUBLIC -//Apple Computer//DTD PLIST 1.0//EN http://www.apple.com/DTDs/PropertyList-1.0.dtd >
+		<plist version="1.0">
+		  <dict>
+		    <key>Label</key>
+		    <string>com.wuzhiwei.filesync</string>
+		    <key>Program</key>
+		    <!-- REPLACE BELOW TO YOUR file_sync.py PATH -->
+		    <string>/Users/Tim/Documents/configs/file_sync/file_sync.py</string>
+		    <key>RunAtLoad</key>
+		    <true/>
+		    <key>KeepAlive</key>
+		    <true/>
+		    <key>UserName</key>
+		    <!-- REPLACE BELOW TO YOUR USERNAME -->
+		    <string>Tim</string>
+		    <key>StandardErrorPath</key>
+		    <!-- REPLACE BELOW TO WHAT EVER PATH YOU LIKE -->
+		    <string>/Users/Tim/Documents/configs/file_sync/file_sync_error.log</string>
+		    <key>StandardOutPath</key>
+		    <!-- REPLACE BELOW TO WHAT EVER PATH YOU LIKE -->
+		    <string>/Users/Tim/Documents/configs/file_sync/file_sync_output.log</string>
+		  </dict>
+		</plist>
+		```
 	* replace to your real path or username in lines below `REPLACE BELOW TO ...`
 	* load the plist to system service: `launchctl load ~/Library/LaunchAgents/com.wuzhiwei.filesync.plist`
 	* *if you want to unload the autorun service:* `launchctl unload ~/Library/LaunchAgents/com.wuzhiwei.filesync.plist`
 	* check if the service is run in back: `launchctl list | grep com.wuzhiwei.filesync`
+	
 * Windows
 
 	I rarely use Windows, there is an ugly way to do this:
