@@ -8,14 +8,14 @@ With git, you can know every change with your files by commits.
 
 ## Setup
 * Install [git](https://git-scm.com/downloads)
-* Install [Python](https://www.python.org/downloads/)
+* Install [Python 3](https://www.python.org/downloads/)
 
 * Install [watchdog](http://pythonhosted.org/watchdog/)
 
 	in OS X or *nix:
 	
 	```
-	pip install watchdog
+	pip3 install watchdog
 	```
 	
 	in Windows:
@@ -73,7 +73,7 @@ Run file_sync.py in submodule file_sync
 
 ```
 cd file_sync
-python file_sync.py
+python3 file_sync.py
 ```
 
 Now modify one of your files mentioned in file_list.txt.
@@ -85,6 +85,21 @@ For example, I modified .zshrc, and then logs are:
 And when I check the remote git repository, all worked ok:
 
 ![check](imgs/check.png)
+
+### Configuration
+By default, changes are pushed to the branch currently checked out in your git repository, on remote `origin`. Set these environment variables to change that:
+
+* `FILE_SYNC_BRANCH`: branch to pull from and push to, e.g. `FILE_SYNC_BRANCH=main python3 file_sync.py`
+* `FILE_SYNC_REMOTE`: remote to pull from and push to, defaults to `origin`
+
+With launchd on OS X, add them under an `EnvironmentVariables` dict in your plist.
+
+### Run tests
+
+```
+cd file_sync
+python3 -m unittest -v test_file_sync
+```
 
 ### Auto run when system startup
 * OS X
